@@ -1,28 +1,42 @@
-import React, {useState, Component} from "react";
+import React, {useState} from "react";
 
-class Basic extends Component
+
+export const Basic = ({nextPage}) =>
 {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
 
-    render() {
+    const basicSubmit = (event) => {
+        event.preventDefault();
+        const basicData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+        };
+        console.log(basicData);
+        nextPage()
+    }
         return (
           <main className="pa4 black-80">
               <h1 className="measure center">Internship Application</h1>
-              <form className="" id="basic-form">
+              <form className="mt3" id="basic-form">
                   <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                  <div>
+                  <div className="mt2">
                       <label className="db fw6 lh-copy f6">First Name</label>
-                      <input className="pa2 input-reset ba bg-transparent hover-bg-dark-gray hover-white w-100" id="firstname" type="text" placeholder="Micheal"/>
+                      <input onChange={(event) => setFirstName(event.target.value)} className="pa2 input-reset ba bg-transparent hover-bg-lightest-blue hover-white w-100" id="firstname" type="text" placeholder="Michael"/>
                   </div>
-                  <br/>
-                  <div>
+                  <div className="mt2">
                       <label className="db fw6 lh-copy f6">Last Name</label>
-                      <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" id="lastname" placeholder="Scott"/><br />
+                      <input onChange={(event) => setLastName(event.target.value)} className="pa2 input-reset ba bg-transparent hover-bg-lightest-blue hover-white w-100" type="text" id="lastname" placeholder="Scott"/>
+                  </div>
+                  <div className="mt2">
+                      <label className="db fw6 lh-copy f6">Email</label>
+                      <input onChange={(event) => setEmail(event.target.value)} className="pa2 input-reset ba bg-transparent hover-bg-lightest-blue hover-white w-100" type="email" id="email" placeholder="michael@dundermifflin.com"/>
                   </div>
                   </fieldset>
-                  <input type="submit" onClick="" />
+                  <input value="Save" type="submit" onClick={basicSubmit} className="grow pointer b--solid b--black-20 bg-white black pa2 b"/>
               </form>
           </main>
         );
-}}
-
-export default Basic
+}
