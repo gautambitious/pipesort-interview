@@ -1,3 +1,17 @@
 .heading{
   font-family: 'Orbitron', sans-serif;
 }
+.center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.search{
+  z-index: 99;
+  display: flex;
+  justify-content: flex-start;
+}
+.nav-items{
+  width: 150px;
+}
