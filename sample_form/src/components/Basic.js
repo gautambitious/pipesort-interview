@@ -24,7 +24,7 @@ export const Basic = ({nextPage}) =>
                   <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                   <div className="mt2">
                       <label className="db fw6 lh-copy f6">First Name</label>
-                      <input onChange={(event) => setFirstName(event.target.value)} className="pa2 input-reset ba bg-transparent hover-bg-lightest-blue w-100" id="firstname" type="text" placeholder="Michael"/>
+                      <input value={firstName} onChange={(event) => setFirstName(event.target.value)} className="pa2 input-reset ba bg-transparent hover-bg-lightest-blue w-100" id="firstname" type="text" placeholder="Michael"/>
                   </div>
                   <div className="mt2">
                       <label className="db fw6 lh-copy f6">Last Name</label>
